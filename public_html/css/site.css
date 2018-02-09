@@ -15,3 +15,12 @@ body{
     background: linear-gradient(180deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
     z-index:9;
 }
+
+.navbar-fixed-bottom{
+    text-align: right;
+    color: rgba(255,255,255,1);
+    background: -webkit-linear-gradient(-90deg, rgba(124,188,10,1) 0, rgba(210,244,146,1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(124,188,10,1) 0, rgba(210,244,146,1) 100%);
+    background: linear-gradient(180deg, rgba(124,188,10,1) 0, rgba(210,244,146,1) 100%);
+    z-index:9;
+}
