@@ -10,6 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="jquery/jquery-ui.min.css" rel="stylesheet"/>
+        <link href="css/animate.css" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -42,30 +44,50 @@ and open the template in the editor.
                 </div>
             </div>
         </nav>
-        
+                
         <!-- Content Body -->
         <div class="container">
-            <div class="jumbotron">
-                <h1> Hello </h1>
-            </div>
-            <div class="container">
+            <h1> Happy Birthday </h1>
+            <form role="form">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <h3>LOOK I AM IN A COLUMN </h3>
-                        <h4> I am Smaller Text </h4>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday">birthday</label>
+                            <input type="text" class="form-control" id="birthday" placeholder="Enter Birthday">
+                        </div>
+                    </div><!-- End of col-sm-6 Div -->
+                    <div class="col-sm-6">
+                        <img src="jquery/images/blue.png" class="ball" id="bb1Img"/>
+                        <img src="jquery/images/green.png" class="ball" id="gb1Img"/>
+                        <img src="jquery/images/blue.png" class="ball" id="bb2Img"/>
+                        <img src="jquery/images/green.png" class="ball" id="gb2Img"/>
+                    </div><!-- End of col-sm-6 Div -->
+                </div><!--  End Of Row Div -->
+            </form>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Select Your favorite Balloon
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="checkbox">
+                        <label><input class="bx" type="checkbox" id="bb1">Blue Balloon 1</label>
                     </div>
-                    <div class="col-md-4">
-                        <h3>LOOK I AM IN A COLUMN </h3>
-                        <h4> I am Smaller Text </h4>
+                    <div class="checkbox">
+                        <label><input class="bx" type="checkbox" id="gb1">Green Balloon 1</label>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <h3>LOOK I AM IN A COLUMN </h3>
-                        <h4> I am Smaller Text </h4>
+                    <div class="checkbox">
+                        <label><input class="bx" type="checkbox" id="bb2">Blue Balloon 2</label>
                     </div>
-                    <div class="col-md-4">
-                        <h3>LOOK I AM IN A COLUMN </h3>
-                        <h4> I am Smaller Text </h4>
+                    <div class="checkbox">
+                        <label><input class="bx" type="checkbox" id="gb2">Green Balloon 2</label>
                     </div>
+                    <button type="button" class="btn btn-default">Submit</button>
                 </div>
             </div>
         </div>
@@ -77,7 +99,30 @@ and open the template in the editor.
             </div>
         </nav>
         
+        
+        <!-- Page Scripts -->
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="jquery/jquery-ui.min.js"></script>
+        
+        <script>
+            $(function(){
+               $('#birthday').datepicker(); 
+               $('.ball').draggable();
+               $('h1').addClass('animated wobble');
+               
+               $('.bx').each(function(){
+                  $(this).is(':checked') ? 
+                    $('#' + $(this).attr('id') + 'Img').css('visibility', 'visible') 
+                  : $('#' + $(this).attr('id') + 'Img').css('visibility', 'hidden');
+               });
+               
+               $('.bx').change(function(){
+                   $(this).is(':checked') ? 
+                    $('#' + $(this).attr('id') + 'Img').removeClass().addClass('animated bounceInDown') 
+                  : $('#' + $(this).attr('id') + 'Img').addClass('animated bounceOutUp');
+               })
+            });
+        </script>
     </body>
 </html>
