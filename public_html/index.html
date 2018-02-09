@@ -13,6 +13,8 @@ and open the template in the editor.
         <link href="jquery/jquery-ui.min.css" rel="stylesheet"/>
         <link href="css/animate.css" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
+        <link href="css/site.css" rel="stylesheet"/>
     </head>
     <body>
         <!-- Page Header -->
@@ -118,6 +120,7 @@ and open the template in the editor.
                });
                
                $('.bx').change(function(){
+                   $('#' + $(this).attr('id') + 'Img').css('visibility', 'visible') 
                    $(this).is(':checked') ? 
                     $('#' + $(this).attr('id') + 'Img').removeClass().addClass('animated bounceInDown') 
                   : $('#' + $(this).attr('id') + 'Img').addClass('animated bounceOutUp');
